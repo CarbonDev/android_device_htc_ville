@@ -72,7 +72,7 @@ BOARD_VOLD_MAX_PARTITIONS := 36
 
 # Flags for Krait CPU / tune for cortex-a9
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
-TARGET_EXTRA_CFLAGS := -mtune=cortex-a15 -mcpu=cortex-a15
+TARGET_EXTRA_CFLAGS := -mcpu=cortex-a9 -mtune=cortex-a15
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
