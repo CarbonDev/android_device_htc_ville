@@ -4,4 +4,4 @@ set -e
 
 export DEVICE=ville
 export VENDOR=htc
-./../msm8960-common/setup-makefiles.sh $@
+./../s4-common/setup-makefiles.sh $@
