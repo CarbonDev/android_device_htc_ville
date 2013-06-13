@@ -16,14 +16,14 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# common msm8960 configs
-$(call inherit-product, device/htc/msm8960-common/msm8960.mk)
+# common S4 configs
+$(call inherit-product, device/htc/s4-common/s4.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/ville/overlay
 
 # Boot ramdisk setup
 PRODUCT_PACKAGES += \
-    fstab.ville \
+    fstab.qcom \
     init.target.rc
 
 # HTC BT audio config
@@ -61,13 +61,13 @@ PRODUCT_COPY_FILES += \
     device/htc/ville/idc/projector_input.idc:system/usr/idc/projector_input.idc \
     device/htc/ville/idc/tv-touchscreen.idc:system/usr/idc/tv-touchscreen.idc
 
+# Recovery
+PRODUCT_COPY_FILES += \
+    device/htc/ville/rootdir/etc/fstab.qcom:recovery/root/fstab.qcom
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch
-
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # Extra properties
 PRODUCT_PROPERTY_OVERRIDES += \
